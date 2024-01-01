@@ -1,25 +1,27 @@
-# LeetCode 75: Sort Colors
+<h1 align="center" id="title">Leetcode - 75</h1>
 
-## Problem Description
+<p align="center"><img src="https://miro.medium.com/v2/resize:fit:1200/1*3N6z7wCvSkDRv_Kr1ZIk4A@2x.jpeg" alt="project-image"></p>
 
-Given an array `nums` with `n` objects colored red, white, or blue, sort them in-place so that objects of the same color are adjacent, with the colors in the order red, white, and blue.
+<p id="description">This repo contains all the 75 questions from the 'Leetcode 75 List'. Solutions are in 'JAVA 'as well as 'CPP'.</p>
 
-Here, we will use the integers 0, 1, and 2 to represent the color red, white, and blue respectively.
+  
+  
+<h2>🧐 Features</h2>
 
-### Example
+Here're some of the project's best features:
 
-Input: [2,0,2,1,1,0]
-Output: [0,0,1,1,2,2]
+*   Solution of each problem in "Java" as well as "CPP".
+*   Code written by human Commented by AI(Artificial Intelligence).
 
-## Approach
+<h2>🛠️ Installation Steps:</h2>
 
-Explain the approach you are taking to solve the problem. You can provide pseudocode, a brief explanation, or a step-by-step guide.
+<p>1. Just copy the code and run it on Leetcode.</p>
 
-## Implementation
+  
+  
+<h2>💻 Built with</h2>
 
-Include code snippets or the full code for your solution. Consider adding comments to explain complex parts of your implementation.
+Technologies used in the project:
 
-```python
-# Python code for the solution
-def sortColors(nums):
-    # Your implementation here
+*   Java
+*   CPP
