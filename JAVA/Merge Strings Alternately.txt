@@ -1,0 +1,44 @@
+class Solution {
+    // Function to merge two strings alternately
+    public String mergeAlternately(String word1, String word2) {
+        // StringBuilder to store the merged string
+        StringBuilder ans = new StringBuilder();
+
+        // Lengths of input strings
+        int n = word1.length();
+        int m = word2.length();
+
+        // Pointers for iterating through the input strings
+        int i = 0; 
+        int j = 0;
+
+        // Iterate through both strings alternately until one of them is exhausted
+        while (i < n && j < m) {
+            // Append characters from word1 and word2 to the result
+            ans.append(word1.charAt(i));
+            ans.append(word2.charAt(j));
+
+            // Move to the next characters in both strings
+            i++;
+            j++;
+        }
+
+        // If there are remaining characters in word1, append them to the result
+        while (i < n) {
+            ans.append(word1.charAt(i));
+            i++;
+        }
+
+        // If there are remaining characters in word2, append them to the result
+        while (j < m) {
+            ans.append(word2.charAt(j));
+            j++;
+        }
+
+        // Convert the StringBuilder to a String and return the result
+        return ans.toString();
+    }
+}
+
+
+Link : https://leetcode.com/problems/merge-strings-alternately/?envType=study-plan-v2&envId=leetcode-75
