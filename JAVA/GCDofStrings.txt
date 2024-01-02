@@ -1,0 +1,22 @@
+class Solution {
+    // Method to find the greatest common divisor of two strings
+    public String gcdOfStrings(String str1, String str2) {
+        // Ensure str2 is not longer than str1 for simplicity
+        if (str2.length() > str1.length()) return gcdOfStrings(str2, str1);
+
+        // Check if the two strings are equal
+        if (str1.equals(str2)) return str1;
+
+        // Check if str2 is a prefix of str1
+        if (str1.startsWith(str2)) {
+            // Recursively call the method with the remaining substring and str2
+            return gcdOfStrings(str1.substring(str2.length()), str2);
+        }
+
+        // If none of the conditions are met, return an empty string (no common divisor)
+        return "";
+    }
+}
+
+
+Link : https://leetcode.com/problems/greatest-common-divisor-of-strings/description/?envType=study-plan-v2&envId=leetcode-75
