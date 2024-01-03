@@ -1,0 +1,33 @@
+import java.util.ArrayList;
+import java.util.List;
+
+class Solution {
+    // Method to determine if each kid can have the greatest number of candies by adding extraCandies
+    public List<Boolean> kidsWithCandies(int[] candies, int extraCandies) {
+        // List to store the result indicating if each kid can have the greatest number of candies
+        List<Boolean> ans = new ArrayList<>();
+
+        // Find the maximum number of candies among all kids
+        int max = Integer.MIN_VALUE;
+        for (int x : candies) {
+            max = Math.max(max, x);
+        }
+
+        // Check each kid's candies and determine if they can have the greatest number by adding extraCandies
+        for (int x : candies) {
+            if (x + extraCandies >= max) {
+                // If adding extraCandies makes the current kid have the greatest number, add true to the result list
+                ans.add(true);
+            } else {
+                // If adding extraCandies doesn't make the current kid have the greatest number, add false to the result list
+                ans.add(false);
+            }
+        }
+
+        // Return the final result list
+        return ans;
+    }
+}
+
+
+Leetcode : https://leetcode.com/problems/kids-with-the-greatest-number-of-candies/description/?envType=study-plan-v2&envId=leetcode-75
