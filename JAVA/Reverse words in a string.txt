@@ -1,0 +1,30 @@
+class Solution {
+    public String reverseWords(String s) {
+        StringBuilder ans = new StringBuilder();
+
+        int start = 0;
+        int end = s.length() -1;
+
+        while(start <= end){
+            // find wordEnd
+            while(end >= 0 && s.charAt(end) == ' ') end--;
+            int wordEnd = end+1;
+            // find wordStart
+            while(end >= 0 && s.charAt(end) != ' ') end--;
+            int wordStart = end+1;
+            // get word
+            String word = s.substring(wordStart,wordEnd);
+            // add to ans
+            ans.append(word);
+            // add space
+            if(end>=0) ans.append(' ');
+        }
+
+        // if got any white space at the end then remove it
+        if(ans.charAt(ans.length()-1) == ' ') ans.deleteCharAt(ans.length() -1);
+
+        return ans.toString();
+    }
+}
+
+LeetCode : https://leetcode.com/problems/reverse-words-in-a-string/?envType=study-plan-v2&envId=leetcode-75
