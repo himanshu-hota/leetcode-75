@@ -1,0 +1,51 @@
+import java.util.*;
+
+class Solution {
+
+    // Helper method to add vowels to the HashSet
+    private void addVowels(HashSet<Character> vowels) {
+        // List of vowels in both uppercase and lowercase
+        List<Character> v = Arrays.asList('a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U');
+        vowels.addAll(v);
+    }
+
+    // Main method to reverse vowels in a string
+    public String reverseVowels(String s) {
+        // StringBuilder to store the modified string
+        StringBuilder ans = new StringBuilder(s);
+
+        // HashSet to store vowels for quick lookup
+        HashSet<Character> vowels = new HashSet();
+
+        // Populate the HashSet with vowels
+        addVowels(vowels);
+
+        // Two pointers approach to swap vowels from the beginning and end
+        int i = 0;
+        int j = s.length() - 1;
+
+        while (i < j) {
+            char first = s.charAt(i);
+            char second = s.charAt(j);
+
+            // If both characters at i and j are vowels, swap them
+            if (vowels.contains(first) && vowels.contains(second)) {
+                ans.setCharAt(i, second);
+                ans.setCharAt(j, first);
+
+                // Move the pointers towards each other
+                i++;
+                j--;
+            } else if (vowels.contains(first)) {
+                // If only the character at i is a vowel, move j pointer
+                j--;
+            } else {
+                // If only the character at j is a vowel, move i pointer
+                i++;
+            }
+        }
+
+        // Convert StringBuilder to String and return the result
+        return ans.toString();
+    }
+}
